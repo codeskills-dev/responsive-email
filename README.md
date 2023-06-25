@@ -100,6 +100,7 @@ export default DemoTemplate
 ### `DualColumn` component <a id="dual-column"></a>
 
 a react-email component that displays your content in a two-column layout on big screens (tablet and desktop) and collapses to a single column on smaller screen sizes.
+
 **Example**
 
 ```
@@ -184,6 +185,7 @@ export default DemoTemplate
 ### `TripleColumn` component <a id="triple-column"></a>
 
 a react-email component that displays your content in a three-column layout on big screens and collapses in a sort of `flex-wrap: wrap` manner till it gets to a single column on smaller screen sizes.
+
 **Example**
 
 ```
