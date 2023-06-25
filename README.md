@@ -12,6 +12,11 @@ This tool takes on an opinionated approach to creating responsive email template
 - [Single-column layout component](#single-column)
 - [Dual-column layout component](#dual-column)
 - [Triple-column layout component](#triple-column)
+- [Supported email clients](#supported-clients)
+- [Contributing](#contributing)
+- [Bugs and Feature requests](#bugs-and-feature-requests)
+- [Author](#author)
+- [License](#license)
 
 ## Installation <a id="installation"></a>
 
@@ -282,3 +287,38 @@ export default DemoTemplate
 - **Type**: number
 
 - **Description**: Numerical value for padding-top and padding-bottom.
+
+## Supported Email Clients <a id="supported-clients"></a>
+
+The provided React-email components and default styling are designed to work well across various email clients and providers. However, due to the inconsistent support for modern web standards in different email clients, it's recommended to test your email templates in multiple clients to ensure compatibility.
+
+The following email clients are known to be supported:
+
+- Gmail
+- Apple Mail
+- Outlook (desktop and web)
+- Yahoo Mail
+- HEY Mail
+- Super Human
+
+| <img src="https://react.email/static/icons/gmail.svg" width="48px" height="48px" alt="Gmail logo"> | <img src="https://react.email/static/icons/apple-mail.svg" width="48px" height="48px" alt="Apple Mail"> | <img src="https://react.email/static/icons/outlook.svg" width="48px" height="48px" alt="Outlook logo"> | <img src="https://react.email/static/icons/yahoo-mail.svg" width="48px" height="48px" alt="Yahoo! Mail logo"> | <img src="https://react.email/static/icons/hey.svg" width="48px" height="48px" alt="HEY logo"> | <img src="https://react.email/static/icons/superhuman.svg" width="48px" height="48px" alt="Superhuman logo"> |
+| -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| Gmail ✔                                                                                            | Apple Mail ✔                                                                                            | Outlook ✔                                                                                              | Yahoo! Mail ✔                                                                                                 | HEY ✔                                                                                          | Superhuman ✔                                                                                                 |
+
+## Contributing <a id="contributing"></a>
+
+Contributions to `responsive-react-email` are welcome! If you find a bug, have suggestions for improvements, or want to add new features, feel free to open an issue or submit a pull request. Please make sure to follow the existing coding style and conventions.
+
+When submitting a pull request, provide a clear description of the changes made and ensure that all tests pass. Adding appropriate tests for new features or bug fixes is highly appreciated.
+
+## Bugs and Feature Requests <a id="bugs-and-feature-requests"></a>
+
+For bugs and feature requests, [please create an issue](https://github.com/codeskills-dev/responsive-react-email/issues/new).
+
+## Author <a id="author"></a>
+
+- Paul Ehikhuemen ([@pauloe_me](https://twitter.com/pauloe_me))
+
+## License <a id="license"></a>
+
+`responsive-react-email` is licensed under the MIT License.
