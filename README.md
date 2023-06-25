@@ -71,7 +71,7 @@ export const DemoTemplate = () => {
 export default DemoTemplate
 ```
 
-**Props**
+### **Props**
 
 #### `children` field
 
@@ -137,7 +137,7 @@ export const DemoTemplate = () => {
 export default DemoTemplate
 ```
 
-**Props**
+### **Props**
 
 #### `columnOneContent` field
 
@@ -225,7 +225,7 @@ export const DemoTemplate = () => {
 export default DemoTemplate
 ```
 
-**Props**
+### **Props**
 
 #### `columnOneContent` field
 
