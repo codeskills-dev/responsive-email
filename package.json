@@ -1,7 +1,18 @@
 {
   "name": "responsive-react-email",
   "version": "0.0.2",
-  "description": "",
+  "description": "A utility for writing responsive email templates with react-email",
+  "keywords": [
+    "responsive-email",
+    "react-email",
+    "email-template",
+    "email",
+    "email-tables"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeskills-dev/responsive-react-email.git"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",

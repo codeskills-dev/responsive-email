@@ -36,8 +36,6 @@ npm install responsive-react-email
 
 ## Components <a id="components"></a>
 
-<!-- import { DualColumn, SingleColumn, TripleColumn } from "responsive-react-email"; -->
-
 ### `SingleColumn` component <a id="single-column"></a>
 
 a react-email component that preserves your content layout as a single column on all screen sizes in the email client.
