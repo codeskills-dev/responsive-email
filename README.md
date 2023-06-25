@@ -33,7 +33,9 @@ npm install responsive-react-email
 
 <!-- import { DualColumn, SingleColumn, TripleColumn } from "responsive-react-email"; -->
 
-- `SingleColumn` <a id="single-column"></a>: a react-email component that preserves your content layout as a single column on all screen sizes in the email client.
+### `SingleColumn` component <a id="single-column"></a>
+
+a react-email component that preserves your content layout as a single column on all screen sizes in the email client.
 
 **Example**
 
@@ -95,8 +97,10 @@ export default DemoTemplate
 
 - **Description**: Numerical value for padding-top and padding-bottom.
 
-- `DualColumn` <a id="dual-column"></a>: a react-email component that displays your content in a two-column layout on big screens (tablet and desktop) and collapses to a single column on smaller screen sizes.
-  **Example**
+### `DualColumn` component <a id="dual-column"></a>
+
+a react-email component that displays your content in a two-column layout on big screens (tablet and desktop) and collapses to a single column on smaller screen sizes.
+**Example**
 
 ```
 import { DualColumn } from "responsive-react-email";
@@ -177,8 +181,10 @@ export default DemoTemplate
 
 - **Description**: Numerical value for padding-top and padding-bottom.
 
-- `TripleColumn` <a id="triple-column"></a>: a react-email component that displays your content in a three-column layout on big screens and collapses in a sort of `flex-wrap: wrap` manner till it gets to a single column on smaller screen sizes.
-  **Example**
+### `TripleColumn` component <a id="triple-column"></a>
+
+a react-email component that displays your content in a three-column layout on big screens and collapses in a sort of `flex-wrap: wrap` manner till it gets to a single column on smaller screen sizes.
+**Example**
 
 ```
 import { TripleColumn } from "responsive-react-email";
