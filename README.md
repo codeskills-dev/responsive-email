@@ -5,13 +5,13 @@
 `responsive-react-email` is a utility for writing responsive email templates with `react-email`.
 This tool takes on an opinionated approach to creating responsive email templates using best practices that improve support across majority of email clients.
 
-## Table of content
+## Table of contents
 
-- Installation
-- Components
-- Single-column layout component
-- Dual-column layout component
-- Triple-column layout component
+- [Installation](#installation)
+- [Components](#components)
+- [Single-column layout component](#single-column)
+- [Dual-column layout component](#dual-column)
+- [Triple-column layout component](#triple-column)
 
 ## Installation <a id="installation"></a>
 
