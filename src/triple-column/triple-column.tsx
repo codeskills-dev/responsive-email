@@ -3,7 +3,10 @@ import React from "react";
 import { threeColumnCol, threeColumnWrapper } from "../styles";
 
 interface TripleColumnProps {
-  styles?: React.CSSProperties;
+  styles?: Omit<
+    React.CSSProperties,
+    "padding" | "paddingLeft" | "paddingRight" | "paddingTop" | "paddingBottom"
+  >;
   pX?: number;
   pY?: number;
   columnOneContent: React.ReactNode;
@@ -25,9 +28,8 @@ export const TripleColumn: React.FC<TripleColumnProps> = ({
   columnTwoStyles,
   columnThreeStyles,
 }) => {
-  const colMaxWidth = pX
-    ? `calc((37.5em - ${2 * pX}px)/3)`
-    : "calc(37.5em / 3)";
+  const colMaxWidth = pX ? (600 - 2 * pX) / 3 : 600 / 3;
+
   return (
     <Section
       style={{

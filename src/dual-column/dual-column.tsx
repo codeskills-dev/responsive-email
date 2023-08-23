@@ -3,7 +3,10 @@ import React from "react";
 import { twoColumnCol, twoColumnWrapper } from "../styles";
 
 interface DualColumnProps {
-  styles?: React.CSSProperties;
+  styles?: Omit<
+    React.CSSProperties,
+    "padding" | "paddingLeft" | "paddingRight" | "paddingTop" | "paddingBottom"
+  >;
   pX?: number;
   pY?: number;
   columnOneContent: React.ReactNode;
@@ -21,15 +24,18 @@ export const DualColumn: React.FC<DualColumnProps> = ({
   columnTwoStyles,
   styles,
 }) => {
-  const colMaxWidth = pX
-    ? `calc((37.5em - ${2 * pX}px)/2)`
-    : "calc(37.5em / 2)";
+  const colMaxWidth = pX ? (600 - 2 * pX) / 2 : 600 / 2;
+
   return (
     <Section
       style={{ ...twoColumnWrapper, ...styles, padding: `${pY}px ${pX}px` }}
     >
       <Section
-        style={{ ...twoColumnCol, ...columnOneStyles, maxWidth: colMaxWidth }}
+        style={{
+          ...twoColumnCol,
+          ...columnOneStyles,
+          maxWidth: colMaxWidth,
+        }}
       >
         {columnOneContent}
       </Section>

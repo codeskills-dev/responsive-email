@@ -5,7 +5,10 @@ interface SingleColumnProps {
   pX?: number;
   pY?: number;
   children?: React.ReactNode;
-  style?: React.CSSProperties;
+  style?: Omit<
+    React.CSSProperties,
+    "padding" | "paddingLeft" | "paddingRight" | "paddingTop" | "paddingBottom"
+  >;
 }
 
 export const SingleColumn: React.FC<SingleColumnProps> = ({
