@@ -147,8 +147,7 @@ export const SingleLayoutTemplate = () => (
               color: "white",
               borderRadius: 5,
               margin: "10px 0",
-              paddingInline: '16px',
-              paddingBlock: '10px'
+              padding: '10px 16px',
             }}
           >
             Continue your order

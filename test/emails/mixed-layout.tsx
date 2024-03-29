@@ -67,8 +67,7 @@ export const MixedLayoutTemplate = () => (
           </Text>
           <Button
             style={{
-              paddingInline: '20px',
-              paddingBlock: '16px',
+              padding: '16px 20px',
               background: "#171a1b",
               color: "white",
               textTransform: "uppercase",
@@ -150,8 +149,7 @@ export const MixedLayoutTemplate = () => (
                 color: "#171a1b",
                 borderRadius: 5,
                 fontWeight: "bold",
-                paddingBlock: '12px',
-                paddingInline: '20px',
+                padding: '12px 20px',
               }}
             >
               Read More
@@ -170,8 +168,7 @@ export const MixedLayoutTemplate = () => (
           </Text>
           <Button
             style={{
-              paddingBlock: '12px',
-              paddingInline: '20px',
+              padding: '12px 20px',
               background: "#171a1b",
               color: "white",
               borderRadius: 5,
