@@ -13,7 +13,7 @@ import {
   Column,
 } from "@react-email/components";
 import React from "react";
-import { SingleColumn, TripleColumn } from "responsive-react-email";
+import { ResponsiveRow, ResponsiveColumn } from "responsive-react-email";
 
 export const SingleLayoutTemplate = () => (
   <Html>
@@ -22,15 +22,15 @@ export const SingleLayoutTemplate = () => (
 
     <Body style={main}>
       <Container style={container}>
-        <SingleColumn style={colPadding}>
+        <Section style={sectionPadding}>
           <Heading
             as="h1"
             style={{ fontSize: 24, color: "#17BEBB", fontWeight: "bolder" }}
           >
             Shop
           </Heading>
-        </SingleColumn>
-        <SingleColumn style={colPadding}>
+        </Section>
+        <Section style={sectionPadding}>
           <Heading
             as="h2"
             style={{
@@ -42,126 +42,138 @@ export const SingleLayoutTemplate = () => (
           >
             Ronald your shopping cart misses you
           </Heading>
-        </SingleColumn>
-        <SingleColumn style={colPadding}>
-          <Text
-            style={{
-              fontSize: 24,
-              marginBottom: 24,
-              lineHeight: 1.8,
-              fontWeight: 300,
-            }}
-          >
-            Amazing deals, updates, interesting news right in your inbox
-          </Text>
-        </SingleColumn>
-        <SingleColumn>
-          <Row
-            style={{
-              ...colPadding,
-              borderBottom: "solid 1px rgba(0,0,0,.05)",
-              paddingBottom: 20,
-            }}
-          >
-            <Column style={{ width: "80%", fontSize: 16, fontWeight: "bold" }}>
-              Item
-            </Column>
-            <Column
+        </Section>
+          <Section style={sectionPadding}>
+            <Text
               style={{
-                width: "20%",
-                fontSize: 16,
-                textAlign: "center",
-                fontWeight: "bold",
+                fontSize: 24,
+                marginBottom: 24,
+                lineHeight: 1.8,
+                fontWeight: 300,
               }}
             >
-              Price
-            </Column>
-          </Row>
-          <Row
-            style={{
-              ...colPadding,
-              borderBottom: "solid 1px rgba(0,0,0,.05)",
-              paddingTop: 20,
-            }}
-          >
-            <Column style={{ width: "80%" }}>
-              <div>
-                <div
-                  style={{
-                    width: "100%",
-                    paddingRight: 20,
-                  }}
-                >
-                  <Heading as="h3" style={{ margin: 0 }}>
-                    Analog wrist watch
-                  </Heading>
-                  <Text style={{ margin: 0, color: "rgba(0,0,0,.5)" }}>
-                    Small
-                  </Text>
-                  <Text style={{ margin: "0 0 15px", color: "rgba(0,0,0,.5)" }}>
-                    A small river namesd Duden flows by their place and supplies
-                    it with the necessary regelialia
-                  </Text>
+              Amazing deals, updates, interesting news right in your inbox
+            </Text>
+          </Section>
+          <Section>
+            <Row
+              style={{
+                ...sectionPadding,
+                borderBottom: "solid 1px rgba(0,0,0,.05)",
+                paddingBottom: 20,
+              }}
+            >
+              <Column
+                style={{ width: "80%", fontSize: 16, fontWeight: "bold" }}
+              >
+                Item
+              </Column>
+              <Column
+                style={{
+                  width: "20%",
+                  fontSize: 16,
+                  textAlign: "center",
+                  fontWeight: "bold",
+                }}
+              >
+                Price
+              </Column>
+            </Row>
+            <Row
+              style={{
+                ...sectionPadding,
+                borderBottom: "solid 1px rgba(0,0,0,.05)",
+                paddingTop: 20,
+              }}
+            >
+              <Column style={{ width: "80%" }}>
+                <div>
+                  <div
+                    style={{
+                      width: "100%",
+                      paddingRight: 20,
+                    }}
+                  >
+                    <Heading as="h3" style={{ margin: 0 }}>
+                      Analog wrist watch
+                    </Heading>
+                    <Text style={{ margin: 0, color: "rgba(0,0,0,.5)" }}>
+                      Small
+                    </Text>
+                    <Text
+                      style={{ margin: "0 0 15px", color: "rgba(0,0,0,.5)" }}
+                    >
+                      A small river namesd Duden flows by their place and
+                      supplies it with the necessary regelialia
+                    </Text>
+                  </div>
                 </div>
-              </div>
-            </Column>
-            <Column style={{ fontSize: 16, textAlign: "center" }}>$120</Column>
-          </Row>
-          <Row
-            style={{
-              ...colPadding,
-              borderBottom: "solid 1px rgba(0,0,0,.05)",
-              paddingTop: 20,
-            }}
-          >
-            <Column style={{ width: "80%" }}>
-              <div>
-                <div
-                  style={{
-                    width: "100%",
-                    paddingRight: 20,
-                  }}
-                >
-                  <Heading as="h3" style={{ margin: 0 }}>
-                    Analog camera
-                  </Heading>
-                  <Text style={{ margin: 0, color: "rgba(0,0,0,.5)" }}>
-                    Small
-                  </Text>
-                  <Text style={{ margin: "0 0 15px", color: "rgba(0,0,0,.5)" }}>
-                    A small river namesd Duden flows by their place and supplies
-                    it with the necessary regelialia
-                  </Text>
+              </Column>
+              <Column style={{ fontSize: 16, textAlign: "center" }}>
+                $120
+              </Column>
+            </Row>
+            <Row
+              style={{
+                ...sectionPadding,
+                borderBottom: "solid 1px rgba(0,0,0,.05)",
+                paddingTop: 20,
+              }}
+            >
+              <Column style={{ width: "80%" }}>
+                <div>
+                  <div
+                    style={{
+                      width: "100%",
+                      paddingRight: 20,
+                    }}
+                  >
+                    <Heading as="h3" style={{ margin: 0 }}>
+                      Analog camera
+                    </Heading>
+                    <Text style={{ margin: 0, color: "rgba(0,0,0,.5)" }}>
+                      Small
+                    </Text>
+                    <Text
+                      style={{ margin: "0 0 15px", color: "rgba(0,0,0,.5)" }}
+                    >
+                      A small river namesd Duden flows by their place and
+                      supplies it with the necessary regelialia
+                    </Text>
+                  </div>
                 </div>
-              </div>
-            </Column>
-            <Column style={{ fontSize: 16, textAlign: "center" }}>$120</Column>
-          </Row>
-        </SingleColumn>
-        <SingleColumn
-          style={{ ...colPadding, paddingTop: 15, paddingBottom: 15 }}
-        >
-          <Button
-            style={{
-              background: "#17BEBB",
-              color: "white",
-              borderRadius: 5,
-              margin: "10px 0",
-              paddingInline: '16px',
-              paddingBlock: '10px',
-            }}
+              </Column>
+              <Column style={{ fontSize: 16, textAlign: "center" }}>
+                $120
+              </Column>
+            </Row>
+          </Section>
+          <Section
+            style={{ ...sectionPadding, paddingTop: 15, paddingBottom: 15 }}
           >
-            Continue your order
-          </Button>
-        </SingleColumn>
-        <TripleColumn
-          styles={{
+            <Button
+              style={{
+                background: "#17BEBB",
+                color: "white",
+                borderRadius: 5,
+                margin: "10px 0",
+                padding: "10px 16px",
+              }}
+            >
+              Continue your order
+            </Button>
+          </Section>
+        <ResponsiveRow
+          style={{
             background: "#f1f1f1",
             borderTop: "1px solid rgba(0,0,0,0.05)",
           }}
-          pX={36}
-          pY={24}
-          columnOneContent={
+          paddingLeft={36}
+          paddingRight={36}
+          paddingTop={24}
+          paddingBottom={24}
+        >
+          <ResponsiveColumn span={2} style={{ paddingRight: 5, paddingLeft: 5 }}>
             <Section style={{ textAlign: "left" }}>
               <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
                 About
@@ -177,9 +189,8 @@ export const SingleLayoutTemplate = () => (
                 with the necessary regelialia
               </Text>
             </Section>
-          }
-          columnOneStyles={{ paddingRight: 5, paddingLeft: 5 }}
-          columnTwoContent={
+          </ResponsiveColumn>
+          <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
             <Section style={{ textAlign: "left" }}>
               <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
                 Contact Info
@@ -203,9 +214,8 @@ export const SingleLayoutTemplate = () => (
                 +2 392 3929 210
               </Text>
             </Section>
-          }
-          columnTwoStyles={{ paddingRight: 5, paddingLeft: 5 }}
-          columnThreeContent={
+          </ResponsiveColumn>
+          <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
             <Section style={{ textAlign: "left" }}>
               <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
                 Useful Links
@@ -225,17 +235,16 @@ export const SingleLayoutTemplate = () => (
                 </li>
               </ul>
             </Section>
-          }
-          columnThreeStyles={{ paddingRight: 5, paddingLeft: 5 }}
-        />
-        <SingleColumn style={{ ...colPadding, textAlign: "center" }}>
+          </ResponsiveColumn>
+        </ResponsiveRow>
+        <Section style={{ ...sectionPadding, textAlign: "center" }}>
           <Text style={{ color: "rgba(0,0,0, 0.4)", margin: "15px 0" }}>
             No longer want to receive these emails? You can{" "}
             <Link href="#" style={{ color: "rgba(0,0,0,0.8)" }}>
               Unsubscribe here
             </Link>
           </Text>
-        </SingleColumn>
+        </Section>
       </Container>
     </Body>
   </Html>
@@ -254,4 +263,4 @@ const container = {
   paddingTop: 32,
 };
 
-const colPadding = { padding: "0px 36px" };
+const sectionPadding = { padding: "0px 36px" } as const;
