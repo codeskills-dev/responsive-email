@@ -3,6 +3,7 @@ import {
   Container,
   Head,
   Html,
+  Section,
   Img,
   Link,
   Preview,
@@ -11,7 +12,7 @@ import {
   Button,
 } from "@react-email/components";
 import * as React from "react";
-import { DualColumn, SingleColumn, TripleColumn } from "responsive-react-email";
+import { ResponsiveRow, ResponsiveColumn } from "responsive-react-email";
 
 export const MixedLayoutTemplate = () => (
   <Html>
@@ -20,41 +21,34 @@ export const MixedLayoutTemplate = () => (
 
     <Body style={main}>
       <Container style={container}>
-        <SingleColumn style={{ height: 8, background: "#171a1b" }} />
-        <DualColumn
-          pY={12}
-          columnOneContent={
-            <>
-              <Img src="/static/img/modern.jpg" width={180} />
-            </>
-          }
-          columnOneStyles={{
+        <Section style={{ height: 8, background: "#171a1b" }} />
+        <ResponsiveRow paddingTop={12} paddingBottom={12}>
+          <ResponsiveColumn style={{
             padding: "0 60px",
-          }}
-          columnTwoContent={
-            <>
-              <Link href="#" style={{ fontSize: 0 }}>
-                <img src="/static/img/black-facebook.png" width={30} />
-              </Link>
-              <Link href="#" style={{ fontSize: 0 }}>
-                <img src="/static/img/black-twitter.png" width={30} />
-              </Link>
-              <Link href="#" style={{ fontSize: 0 }}>
-                <img src="/static/img/black-youtube.png" width={30} />
-              </Link>
-              <Link href="#" style={{ fontSize: 0 }}>
-                <img src="/static/img/black-linkedin.png" width={30} />
-              </Link>
-              <Link href="#" style={{ fontSize: 0 }}>
-                <img src="/static/img/black-instagram.png" width={30} />
-              </Link>
-            </>
-          }
-          columnTwoStyles={{
+          }}>
+            <Img src="/static/img/modern.jpg" width={180} />
+          </ResponsiveColumn>
+          <ResponsiveColumn style={{
             padding: "10px 75px",
-          }}
-        />
-        <SingleColumn
+          }}>
+            <Link href="#" style={{ fontSize: 0 }}>
+              <img src="/static/img/black-facebook.png" width={30} />
+            </Link>
+            <Link href="#" style={{ fontSize: 0 }}>
+              <img src="/static/img/black-twitter.png" width={30} />
+            </Link>
+            <Link href="#" style={{ fontSize: 0 }}>
+              <img src="/static/img/black-youtube.png" width={30} />
+            </Link>
+            <Link href="#" style={{ fontSize: 0 }}>
+              <img src="/static/img/black-linkedin.png" width={30} />
+            </Link>
+            <Link href="#" style={{ fontSize: 0 }}>
+              <img src="/static/img/black-instagram.png" width={30} />
+            </Link>
+          </ResponsiveColumn>
+        </ResponsiveRow>
+        <Section
           style={{
             backgroundImage: `url("/static/img/banner-bg.jpg")`,
             backgroundSize: "cover",
@@ -84,27 +78,23 @@ export const MixedLayoutTemplate = () => (
           >
             Get started
           </Button>
-        </SingleColumn>
-        <TripleColumn
-          pY={15}
-          columnOneContent={
-            <>
-              <Link href="#">
-                <img
-                  src="/static/img/email.png"
-                  width={130}
-                  style={{ maxWidth: "130px" }}
-                />
-              </Link>
-              <Heading as="h3">E-commerce</Heading>
-              <Text style={{ fontSize: 15, lineHeight: "20px" }}>
-                Responsive HTML Email Template course to master email
-                development
-              </Text>
-            </>
-          }
-          columnTwoContent={
-            <>
+        </Section>
+        <ResponsiveRow paddingTop={15} paddingBottom={15}>
+          <ResponsiveColumn>
+            <Link href="#">
+              <img
+                src="/static/img/email.png"
+                width={130}
+                style={{ maxWidth: "130px" }}
+              />
+            </Link>
+            <Heading as="h3">E-commerce</Heading>
+            <Text style={{ fontSize: 15, lineHeight: "20px" }}>
+              Responsive HTML Email Template course to master email
+              development
+            </Text>
+          </ResponsiveColumn>
+          <ResponsiveColumn>
               <Link href="#">
                 <img
                   src="/static/img/settings.png"
@@ -117,69 +107,58 @@ export const MixedLayoutTemplate = () => (
                 Responsive HTML Email Template course to master email
                 development
               </Text>
-            </>
-          }
-          columnThreeContent={
-            <>
-              <Link href="#">
-                <img
-                  src="/static/img/home.png"
-                  width={130}
-                  style={{ maxWidth: "130px" }}
-                />
-              </Link>
-              <Heading as="h3">HTML Email</Heading>
-              <Text style={{ fontSize: 15, lineHeight: "20px" }}>
-                Responsive HTML Email Template course to master email
-                development
-              </Text>
-            </>
-          }
-        />
-        <DualColumn
-          styles={{ background: "#26292b" }}
-          pY={25}
-          columnOneContent={
-            <>
-              <Link href="#">
-                <img
-                  src="/static/img/keyboard.jpg"
-                  width={260}
-                  style={{ maxWidth: "260px" }}
-                />
-              </Link>
-            </>
-          }
-          columnOneStyles={{ padding: "0 20px" }}
-          columnTwoContent={
-            <>
-              <Heading as="h3">Create Custom Designs</Heading>
-              <Text>
-                Over the years we have built up a massive portfolio our client
-                website and email designs
-              </Text>
-              <Button
-                href="#"
-                style={{
-                  background: "white",
-                  color: "#171a1b",
-                  borderRadius: 5,
-                  fontWeight: "bold",
-                  paddingBlock: '12px',
-                  paddingInline: '20px',
-                }}
-              >
-                Read More
-              </Button>
-            </>
-          }
-          columnTwoStyles={{
+          </ResponsiveColumn>
+          <ResponsiveColumn>
+            <Link href="#">
+              <img
+                src="/static/img/home.png"
+                width={130}
+                style={{ maxWidth: "130px" }}
+              />
+            </Link>
+            <Heading as="h3">HTML Email</Heading>
+            <Text style={{ fontSize: 15, lineHeight: "20px" }}>
+              Responsive HTML Email Template course to master email
+              development
+            </Text>
+          </ResponsiveColumn>
+        </ResponsiveRow>
+        <ResponsiveRow style={{ background: "#26292b" }} paddingTop={25} paddingBottom={25}>
+          <ResponsiveColumn style={{ padding: "0 20px" }}>
+            <Link href="#">
+              <img
+                src="/static/img/keyboard.jpg"
+                width={260}
+                style={{ maxWidth: "260px" }}
+              />
+            </Link>
+          </ResponsiveColumn>
+          <ResponsiveColumn style={{
             color: "white",
             textAlign: "left",
             padding: "0 20px",
-          }}
-        />
-        <SingleColumn
+          }}>
+            <Heading as="h3">Create Custom Designs</Heading>
+            <Text>
+              Over the years we have built up a massive portfolio our client
+              website and email designs
+            </Text>
+            <Button
+              href="#"
+              style={{
+                background: "white",
+                color: "#171a1b",
+                borderRadius: 5,
+                fontWeight: "bold",
+                paddingBlock: '12px',
+                paddingInline: '20px',
+              }}
+            >
+              Read More
+            </Button>
+          </ResponsiveColumn>
+        </ResponsiveRow>
+        <Section
           style={{ textAlign: "center", padding: "20px 20px 40px" }}
         >
           <Heading as="h3">HTML Email Template Course</Heading>
@@ -201,8 +180,8 @@ export const MixedLayoutTemplate = () => (
           >
             View Course
           </Button>
-        </SingleColumn>
-        <SingleColumn
+        </Section>
+        <Section
           style={{
             textAlign: "center",
             color: "white",
@@ -235,7 +214,7 @@ export const MixedLayoutTemplate = () => (
           <Link href="#" style={{ textTransform: "uppercase", color: "white" }}>
             Subscribe
           </Link>
-        </SingleColumn>
+        </Section>
       </Container>
     </Body>
   </Html>
