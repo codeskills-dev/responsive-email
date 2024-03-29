@@ -56,7 +56,6 @@
     "typescript": "5.1.3"
   },
   "peerDependencies": {
-    "react": "18.x",
-    "react-email": "1.x"
+    "react": "18.x"
   }
 }
