@@ -13,7 +13,7 @@ import {
   Column,
 } from "@react-email/components";
 import React from "react";
-import { SingleColumn, TripleColumn } from "responsive-react-email";
+import { ResponsiveColumn, ResponsiveRow } from "responsive-react-email";
 
 export const SingleLayoutTemplate = () => (
   <Html>
@@ -22,15 +22,15 @@ export const SingleLayoutTemplate = () => (
 
     <Body style={main}>
       <Container style={container}>
-        <SingleColumn style={colPadding}>
+        <Section style={colPadding}>
           <Heading
             as="h1"
             style={{ fontSize: 24, color: "#17BEBB", fontWeight: "bolder" }}
           >
             Shop
           </Heading>
-        </SingleColumn>
-        <SingleColumn style={colPadding}>
+        </Section>
+        <Section style={colPadding}>
           <Heading
             as="h2"
             style={{
@@ -42,8 +42,8 @@ export const SingleLayoutTemplate = () => (
           >
             Ronald your shopping cart misses you
           </Heading>
-        </SingleColumn>
-        <SingleColumn style={colPadding}>
+        </Section>
+        <Section style={colPadding}>
           <Text
             style={{
               fontSize: 24,
@@ -54,8 +54,8 @@ export const SingleLayoutTemplate = () => (
           >
             Amazing deals, updates, interesting news right in your inbox
           </Text>
-        </SingleColumn>
-        <SingleColumn>
+        </Section>
+        <Section>
           <Row
             style={{
               ...colPadding,
@@ -137,8 +137,8 @@ export const SingleLayoutTemplate = () => (
             </Column>
             <Column style={{ fontSize: 16, textAlign: "center" }}>$120</Column>
           </Row>
-        </SingleColumn>
-        <SingleColumn
+        </Section>
+        <Section
           style={{ ...colPadding, paddingTop: 15, paddingBottom: 15 }}
         >
           <Button
@@ -153,15 +153,12 @@ export const SingleLayoutTemplate = () => (
           >
             Continue your order
           </Button>
-        </SingleColumn>
-        <TripleColumn
-          styles={{
+        </Section>
+        <ResponsiveRow paddingTop={24} paddingBottom={24} paddingLeft={36} paddingRight={36} style={{
             background: "#f1f1f1",
             borderTop: "1px solid rgba(0,0,0,0.05)",
-          }}
-          pX={36}
-          pY={24}
-          columnOneContent={
+          }}>
+          <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
             <Section style={{ textAlign: "left" }}>
               <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
                 About
@@ -177,9 +174,8 @@ export const SingleLayoutTemplate = () => (
                 with the necessary regelialia
               </Text>
             </Section>
-          }
-          columnOneStyles={{ paddingRight: 5, paddingLeft: 5 }}
-          columnTwoContent={
+          </ResponsiveColumn>
+          <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
             <Section style={{ textAlign: "left" }}>
               <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
                 Contact Info
@@ -203,9 +199,8 @@ export const SingleLayoutTemplate = () => (
                 +2 392 3929 210
               </Text>
             </Section>
-          }
-          columnTwoStyles={{ paddingRight: 5, paddingLeft: 5 }}
-          columnThreeContent={
+          </ResponsiveColumn>
+          <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
             <Section style={{ textAlign: "left" }}>
               <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
                 Useful Links
@@ -225,17 +220,16 @@ export const SingleLayoutTemplate = () => (
                 </li>
               </ul>
             </Section>
-          }
-          columnThreeStyles={{ paddingRight: 5, paddingLeft: 5 }}
-        />
-        <SingleColumn style={{ ...colPadding, textAlign: "center" }}>
+          </ResponsiveColumn>
+        </ResponsiveRow>
+        <Section style={{ ...colPadding, textAlign: "center" }}>
           <Text style={{ color: "rgba(0,0,0, 0.4)", margin: "15px 0" }}>
             No longer want to receive these emails? You can{" "}
             <Link href="#" style={{ color: "rgba(0,0,0,0.8)" }}>
               Unsubscribe here
             </Link>
           </Text>
-        </SingleColumn>
+        </Section>
       </Container>
     </Body>
   </Html>
