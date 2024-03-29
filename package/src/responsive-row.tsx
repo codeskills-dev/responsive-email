@@ -61,7 +61,6 @@ export const ResponsiveRow = (props: ResponsiveRowProps) => {
         if (isResponsiveColumn(node)) {
           const columnProps = node.props;
           const columnSpan = columnProps.span ?? 1;
-          console.log(columnSpan, oneColumnMaxWidth);
 
           return (
             <Section
