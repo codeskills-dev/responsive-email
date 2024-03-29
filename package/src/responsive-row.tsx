@@ -1,6 +1,6 @@
 import { Section } from "@react-email/section";
 import React from "react";
-import { ResponsiveColumnProps, isResponsiveColumn } from "./responsive-column";
+import { isResponsiveColumn } from "./responsive-column";
 
 export type ResponsiveRowProps = Omit<
   React.ComponentPropsWithoutRef<"div">,
@@ -15,7 +15,10 @@ export type ResponsiveRowProps = Omit<
     | "paddingBottom"
     | "paddingInline"
     | "paddingBlock"
+    | "maxWidth"
   >;
+
+  maxWidth?: number;
 
   paddingLeft?: number;
   paddingRight?: number;
@@ -34,15 +37,16 @@ export type ResponsiveRowProps = Omit<
  * ```
  */
 export const ResponsiveRow = (props: ResponsiveRowProps) => {
-  const childrenArray = React.Children.toArray(props.children) as unknown[];
+  const childrenArray = React.Children.toArray(props.children);
 
-  const columnsCount = (
-    childrenArray.filter(isResponsiveColumn) as ResponsiveColumnProps[]
-  ).length;
+  const totalColumnSpan = childrenArray
+    .filter(isResponsiveColumn)
+    .map((node) => node.props.span ?? 1)
+    .reduce((acc, spanForColumn) => acc + spanForColumn, 0);
 
   const pl = props.paddingLeft ?? 0;
   const pr = props.paddingLeft ?? 0;
-  const oneColumnMaxWidth = (600 - pl - pr) / columnsCount;
+  const oneColumnMaxWidth = (props.maxWidth ?? 600 - pl - pr) / totalColumnSpan;
 
   return (
     <Section
@@ -53,25 +57,29 @@ export const ResponsiveRow = (props: ResponsiveRowProps) => {
         ...props.style,
       }}
     >
-      {childrenArray.map((child, i) => {
-        if (isResponsiveColumn(child)) {
+      {childrenArray.map((node, i) => {
+        if (isResponsiveColumn(node)) {
+          const columnProps = node.props;
+          const columnSpan = columnProps.span ?? 1;
+          console.log(columnSpan, oneColumnMaxWidth);
+
           return (
             <Section
-              {...child}
+              {...columnProps}
               key={i}
               style={{
-                maxWidth: oneColumnMaxWidth * child.span,
+                maxWidth: oneColumnMaxWidth * columnSpan,
                 display: "inline-block",
                 verticalAlign: "top",
                 fontSize: 16,
                 boxSizing: "border-box",
-                ...child.style,
+                ...columnProps.style,
               }}
             />
           );
         }
 
-        return child as React.ReactNode;
+        return node;
       })}
     </Section>
   );
