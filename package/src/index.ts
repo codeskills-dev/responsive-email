@@ -1,3 +1,2 @@
-export { SingleColumn } from "./single-column";
-export { DualColumn } from "./dual-column";
-export { TripleColumn } from "./triple-column";
+export * from './responsive-column';
+export * from './responsive-row';
