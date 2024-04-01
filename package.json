@@ -6,7 +6,7 @@
   },
   "scripts": {
     "build": "cd package && pnpm build",
-    "dev": "cd test && pnpm dev"
+    "dev": "cd samples && pnpm dev"
   },
   "packageManager": "pnpm@8.15.5"
 }
