@@ -1,0 +1,21 @@
+{
+  "name": "responsive-email-core",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeskills-dev/responsive-react-email.git"
+  },
+  "author": {
+    "name": "Paul Ehikhuemen",
+    "url": "https://github.com/lordelogos"
+  },
+  "main": "./src/index.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "18.2.14",
+    "react": "18.2.0",
+    "typescript": "5.1.3"
+  },
+  "peerDependencies": {
+    "react": "18.x"
+  }
+}
