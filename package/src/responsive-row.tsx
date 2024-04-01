@@ -39,10 +39,19 @@ export type ResponsiveRowProps = Omit<
 export const ResponsiveRow = (props: ResponsiveRowProps) => {
   const childrenArray = React.Children.toArray(props.children);
 
-  const totalColumnSpan = childrenArray
+  const responsiveColumns = childrenArray
     .filter(isResponsiveColumn)
-    .map((node) => node.props.span ?? 1)
-    .reduce((acc, spanForColumn) => acc + spanForColumn, 0);
+    .map((node) => node.props.span ?? 1);
+  if (responsiveColumns.length > 3) {
+    console.warn(
+      "Seems like you are using more than 3 columns, maybe you should consider up to 3. Usually it is best practice to do so.",
+    );
+  }
+
+  const totalColumnSpan = responsiveColumns.reduce(
+    (acc, spanForColumn) => acc + spanForColumn,
+    0,
+  );
 
   const pl = props.paddingLeft ?? 0;
   const pr = props.paddingLeft ?? 0;
