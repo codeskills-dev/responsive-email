@@ -1,11 +1,10 @@
 {
-  "name": "responsive-react-email-monorepo",
+  "name": "responsive-email-monorepo",
   "author": {
     "name": "Paul Ehikhuemen",
     "url": "https://github.com/lordelogos"
   },
   "scripts": {
-    "build": "cd package && pnpm build",
     "dev": "cd samples && pnpm dev"
   },
   "packageManager": "pnpm@8.15.5"
