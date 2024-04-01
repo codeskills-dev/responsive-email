@@ -26,11 +26,14 @@ importers:
         specifier: 18.2.14
         version: 18.2.14
       jsx-email:
-        specifier: ^1.10.12
+        specifier: 1.10.12
         version: 1.10.12(@jsx-email/app-preview@1.2.5)(@types/react@18.2.14)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
+      responsive-email-core:
+        specifier: workspace:*
+        version: link:../core
       tsup:
         specifier: ^7.0.0
         version: 7.3.0(postcss@8.4.35)(typescript@5.1.3)

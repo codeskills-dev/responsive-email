@@ -1,7 +1,7 @@
 {
   "name": "responsive-jsx-email",
   "version": "0.0.5",
-  "description": "A utility for writing responsive email templates with jsx-email",
+  "description": "A utility for writing responsive email templates with react-email",
   "keywords": [
     "responsive-email",
     "react-email",
@@ -17,21 +17,26 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js",
-    "./single-column": "./dist/single-column/index.js",
-    "./dual-column": "./dist/dual-column/index.js",
-    "./triple-column": "./dist/triple-column/index.js"
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./responsive-row": {
+      "import": "./dist/responsive-row.mjs",
+      "require": "./dist/responsive-row.js"
+    },
+    "./responsive-column": {
+      "import": "./dist/responsive-column.mjs",
+      "require": "./dist/responsive-column.js"
+    }
   },
   "typesVersions": {
     "*": {
-      "single-column": [
-        "dist/single-column/index.d.ts"
+      "responsive-row": [
+        "./dist/responsive-row.d.ts"
       ],
-      "dual-column": [
-        "dist/dual-column/index.d.ts"
-      ],
-      "triple-column": [
-        "dist/triple-column/index.d.ts"
+      "responsive-column": [
+        "./dist/responsive-column.d.ts"
       ]
     }
   },
@@ -49,8 +54,9 @@
   "license": "MIT",
   "devDependencies": {
     "@types/react": "18.2.14",
-    "jsx-email": "^1.10.12",
+    "jsx-email": "1.10.12",
     "react": "18.2.0",
+    "responsive-email-core": "workspace:*",
     "tsup": "^7.0.0",
     "typescript": "5.1.3"
   },
