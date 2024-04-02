@@ -1,6 +1,6 @@
-# React Email Starter
+# Responsive Email Samples
 
-A live preview right in your browser so you don't need to keep sending real emails during development.
+A live preview right in your browser.
 
 ## Getting Started
 

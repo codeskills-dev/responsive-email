@@ -1,5 +1,5 @@
 {
-  "name": "responsive-email-core",
+  "name": "@responsive-email/core",
   "repository": {
     "type": "git",
     "url": "https://github.com/codeskills-dev/responsive-react-email.git"

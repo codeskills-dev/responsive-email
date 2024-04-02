@@ -2,7 +2,7 @@ import { SectionProps } from "@react-email/section";
 import {
   createResponsiveColumn,
   ResponsiveColumnProps as BaseProps,
-} from "responsive-email-core";
+} from "@responsive-email/core";
 
 export type ResponsiveColumnProps = BaseProps<SectionProps>;
 

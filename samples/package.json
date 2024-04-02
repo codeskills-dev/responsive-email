@@ -1,6 +1,6 @@
 {
-  "name": "emails",
-  "version": "0.0.19",
+  "name": "@responsive-email/samples",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "build": "email build",
@@ -8,7 +8,7 @@
     "export": "email export"
   },
   "dependencies": {
-    "responsive-react-email": "workspace:*",
+    "@responsive-email/react-email": "workspace:*",
     "@react-email/components": "0.0.16",
     "react-email": "2.1.1",
     "react": "18.2.0"

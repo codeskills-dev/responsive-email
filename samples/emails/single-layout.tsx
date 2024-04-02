@@ -13,7 +13,7 @@ import {
   Column,
 } from "@react-email/components";
 import React from "react";
-import { ResponsiveColumn, ResponsiveRow } from "responsive-react-email";
+import { ResponsiveColumn, ResponsiveRow } from "@responsive-email/react-email";
 
 export const SingleLayoutTemplate = () => (
   <Html>
@@ -138,25 +138,29 @@ export const SingleLayoutTemplate = () => (
             <Column style={{ fontSize: 16, textAlign: "center" }}>$120</Column>
           </Row>
         </Section>
-        <Section
-          style={{ ...colPadding, paddingTop: 15, paddingBottom: 15 }}
-        >
+        <Section style={{ ...colPadding, paddingTop: 15, paddingBottom: 15 }}>
           <Button
             style={{
               background: "#17BEBB",
               color: "white",
               borderRadius: 5,
               margin: "10px 0",
-              padding: '10px 16px',
+              padding: "10px 16px",
             }}
           >
             Continue your order
           </Button>
         </Section>
-        <ResponsiveRow paddingTop={24} paddingBottom={24} paddingLeft={36} paddingRight={36} style={{
+        <ResponsiveRow
+          paddingTop={24}
+          paddingBottom={24}
+          paddingLeft={36}
+          paddingRight={36}
+          style={{
             background: "#f1f1f1",
             borderTop: "1px solid rgba(0,0,0,0.05)",
-          }}>
+          }}
+        >
           <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
             <Section style={{ textAlign: "left" }}>
               <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
