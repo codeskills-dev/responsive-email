@@ -29,11 +29,11 @@ export type ResponsiveRowProps<SectionProps extends BaseSectionProps> = Omit<
 export function createResponsiveRow<SectionProps extends BaseSectionProps>(
   Section: React.FC<BaseSectionProps>,
   isResponsiveColumn: (
-    node: any,
+    node: any
   ) => node is React.ReactElement<
     ResponsiveColumnProps<SectionProps>,
     React.FC<ResponsiveColumnProps<SectionProps>>
-  >,
+  >
 ) {
   return (props: ResponsiveRowProps<SectionProps>) => {
     const childrenArray = React.Children.toArray(props.children);
@@ -43,13 +43,13 @@ export function createResponsiveRow<SectionProps extends BaseSectionProps>(
       .map((node) => node.props.span ?? 1);
     if (responsiveColumns.length > 3) {
       console.warn(
-        "Seems like you are using more than 3 columns, maybe you should consider up to 3. Usually it is best practice to do so.",
+        "You've exceeded the recommended 3-column limit in your email template. Consider sticking to a maximum of 3 columns for best practice."
       );
     }
 
     const totalColumnSpan = responsiveColumns.reduce(
       (acc, spanForColumn) => acc + spanForColumn,
-      0,
+      0
     );
 
     const pl = props.paddingLeft ?? 0;
@@ -62,7 +62,9 @@ export function createResponsiveRow<SectionProps extends BaseSectionProps>(
         style={{
           textAlign: "center",
           fontSize: 0,
-          padding: `${props.paddingTop ?? 0}px ${props.paddingRight ?? 0}px ${props.paddingBottom ?? 0}px ${props.paddingLeft ?? 0}px`,
+          padding: `${props.paddingTop ?? 0}px ${props.paddingRight ?? 0}px ${
+            props.paddingBottom ?? 0
+          }px ${props.paddingLeft ?? 0}px`,
           ...props.style,
         }}
       >
