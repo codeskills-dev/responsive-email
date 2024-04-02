@@ -1,27 +1,3 @@
-# Responsive Email Samples
-
-A live preview right in your browser.
-
-## Getting Started
-
-First, install the dependencies:
-
-```sh
-npm install
-# or
-yarn
-```
-
-Then, run the development server:
-
-```sh
-npm run dev
-# or
-yarn dev
-```
-
-Open [localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## License
-
-MIT License
+This is a React Email project with sample email templates using that was
+bootstrapped with `npx create-email@latest`. It contains an email template
+showcasing how the usage of the components would go.
