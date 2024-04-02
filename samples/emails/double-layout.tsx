@@ -8,241 +8,141 @@ import {
   Preview,
   Text,
   Link,
+  Img,
   Section,
-  Row,
-  Column,
 } from "@react-email/components";
 import React from "react";
-import { ResponsiveRow, ResponsiveColumn } from "responsive-react-email";
+import { ResponsiveColumn, ResponsiveRow } from "@responsive-email/react-email";
 
-export const SingleLayoutTemplate = () => (
+export const DoubleLayoutTemplate = () => (
   <Html>
     <Head />
-    <Preview>Responsive Single column Template</Preview>
+    <Preview>Responsive Double column Template</Preview>
 
     <Body style={main}>
       <Container style={container}>
-        <Section style={sectionPadding}>
-          <Heading
-            as="h1"
-            style={{ fontSize: 24, color: "#17BEBB", fontWeight: "bolder" }}
-          >
-            Shop
+        <Section style={{ padding: "0 25px" }}>
+          <Img
+            src={`/static/notion-logo.png`}
+            width="32"
+            height="32"
+            alt="Notion's Logo"
+          />
+          <Text>Hi Paul,</Text>
+          <Text>
+            You can create just about anything with Notion. We see this come to
+            life in the templates our users build - personal dashboards, habit
+            trackers, travel planners and more.
+          </Text>
+          <Heading as="h3" style={{ margin: "24px 0 12px" }}>
+            Explore by category
           </Heading>
+          <Text style={{ marginBottom: 14 }}>
+            Click on a category below to start exploring
+          </Text>
         </Section>
-        <Section style={sectionPadding}>
-          <Heading
-            as="h2"
-            style={{
-              fontSize: 34,
-              fontWeight: 400,
-              marginBottom: 14,
-              letterSpacing: 1,
-            }}
-          >
-            Ronald your shopping cart misses you
-          </Heading>
-        </Section>
-          <Section style={sectionPadding}>
-            <Text
-              style={{
-                fontSize: 24,
-                marginBottom: 24,
-                lineHeight: 1.8,
-                fontWeight: 300,
-              }}
-            >
-              Amazing deals, updates, interesting news right in your inbox
-            </Text>
-          </Section>
-          <Section>
-            <Row
-              style={{
-                ...sectionPadding,
-                borderBottom: "solid 1px rgba(0,0,0,.05)",
-                paddingBottom: 20,
-              }}
-            >
-              <Column
-                style={{ width: "80%", fontSize: 16, fontWeight: "bold" }}
-              >
-                Item
-              </Column>
-              <Column
-                style={{
-                  width: "20%",
-                  fontSize: 16,
-                  textAlign: "center",
-                  fontWeight: "bold",
-                }}
-              >
-                Price
-              </Column>
-            </Row>
-            <Row
-              style={{
-                ...sectionPadding,
-                borderBottom: "solid 1px rgba(0,0,0,.05)",
-                paddingTop: 20,
-              }}
-            >
-              <Column style={{ width: "80%" }}>
-                <div>
-                  <div
-                    style={{
-                      width: "100%",
-                      paddingRight: 20,
-                    }}
-                  >
-                    <Heading as="h3" style={{ margin: 0 }}>
-                      Analog wrist watch
-                    </Heading>
-                    <Text style={{ margin: 0, color: "rgba(0,0,0,.5)" }}>
-                      Small
-                    </Text>
-                    <Text
-                      style={{ margin: "0 0 15px", color: "rgba(0,0,0,.5)" }}
-                    >
-                      A small river namesd Duden flows by their place and
-                      supplies it with the necessary regelialia
-                    </Text>
-                  </div>
-                </div>
-              </Column>
-              <Column style={{ fontSize: 16, textAlign: "center" }}>
-                $120
-              </Column>
-            </Row>
-            <Row
-              style={{
-                ...sectionPadding,
-                borderBottom: "solid 1px rgba(0,0,0,.05)",
-                paddingTop: 20,
-              }}
-            >
-              <Column style={{ width: "80%" }}>
-                <div>
-                  <div
-                    style={{
-                      width: "100%",
-                      paddingRight: 20,
-                    }}
-                  >
-                    <Heading as="h3" style={{ margin: 0 }}>
-                      Analog camera
-                    </Heading>
-                    <Text style={{ margin: 0, color: "rgba(0,0,0,.5)" }}>
-                      Small
-                    </Text>
-                    <Text
-                      style={{ margin: "0 0 15px", color: "rgba(0,0,0,.5)" }}
-                    >
-                      A small river namesd Duden flows by their place and
-                      supplies it with the necessary regelialia
-                    </Text>
-                  </div>
-                </div>
-              </Column>
-              <Column style={{ fontSize: 16, textAlign: "center" }}>
-                $120
-              </Column>
-            </Row>
-          </Section>
-          <Section
-            style={{ ...sectionPadding, paddingTop: 15, paddingBottom: 15 }}
-          >
-            <Button
-              style={{
-                background: "#17BEBB",
-                color: "white",
-                borderRadius: 5,
-                margin: "10px 0",
-                padding: "10px 16px",
-              }}
-            >
-              Continue your order
-            </Button>
-          </Section>
-        <ResponsiveRow
-          style={{
-            background: "#f1f1f1",
-            borderTop: "1px solid rgba(0,0,0,0.05)",
-          }}
-          paddingLeft={36}
-          paddingRight={36}
-          paddingTop={24}
-          paddingBottom={24}
-        >
-          <ResponsiveColumn span={2} style={{ paddingRight: 5, paddingLeft: 5 }}>
-            <Section style={{ textAlign: "left" }}>
-              <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
-                About
-              </Heading>
-              <Text
-                style={{
-                  fontSize: 14,
-                  margin: "15px 0",
-                  color: "rgba(0,0,0,.5)",
-                }}
-              >
-                A small river named Duded flows by their place and supplies it
-                with the necessary regelialia
-              </Text>
-            </Section>
+        <ResponsiveRow paddingLeft={25} paddingRight={25}>
+          <ResponsiveColumn style={{ textAlign: "center", marginBottom: 16 }}>
+            <Link href="#">
+              <img
+                src="/static/img/button-one.png"
+                alt="Explore personal productivity templates"
+                width={"90%"}
+              />
+            </Link>
           </ResponsiveColumn>
-          <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
-            <Section style={{ textAlign: "left" }}>
-              <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
-                Contact Info
-              </Heading>
-              <Text
-                style={{
-                  fontSize: 14,
-                  marginBottom: 10,
-                  color: "rgba(0,0,0,.5)",
-                }}
-              >
-                203 Fake St. Mountain View, San Francisco, California, USA
-              </Text>
-              <Text
-                style={{
-                  fontSize: 14,
-                  marginBottom: 10,
-                  color: "rgba(0,0,0,.5)",
-                }}
-              >
-                +2 392 3929 210
-              </Text>
-            </Section>
-          </ResponsiveColumn>
-          <ResponsiveColumn style={{ paddingRight: 5, paddingLeft: 5 }}>
-            <Section style={{ textAlign: "left" }}>
-              <Heading as="h3" style={{ fontSize: 20, marginBottom: 20 }}>
-                Useful Links
-              </Heading>
-              <ul style={{ listStyle: "none", padding: 0, fontSize: 14 }}>
-                <li style={{ marginBottom: 10 }}>
-                  <Link style={{ color: "black" }}>Home</Link>
-                </li>
-                <li style={{ marginBottom: 10 }}>
-                  <Link style={{ color: "black" }}>Account</Link>
-                </li>
-                <li style={{ marginBottom: 10 }}>
-                  <Link style={{ color: "black" }}>Wishlist</Link>
-                </li>
-                <li style={{ marginBottom: 10 }}>
-                  <Link style={{ color: "black" }}>Order</Link>
-                </li>
-              </ul>
-            </Section>
+          <ResponsiveColumn style={{ textAlign: "center", marginBottom: 16 }}>
+            <Link href="#">
+              <img
+                src="/static/img/button-two.png"
+                alt="Explore health and fitness templates"
+                width={"90%"}
+              />
+            </Link>
           </ResponsiveColumn>
         </ResponsiveRow>
-        <Section style={{ ...sectionPadding, textAlign: "center" }}>
-          <Text style={{ color: "rgba(0,0,0, 0.4)", margin: "15px 0" }}>
-            No longer want to receive these emails? You can{" "}
-            <Link href="#" style={{ color: "rgba(0,0,0,0.8)" }}>
-              Unsubscribe here
+
+        <ResponsiveRow paddingLeft={25} paddingRight={25}>
+          <ResponsiveColumn style={{ textAlign: "center", marginBottom: 16 }}>
+            <Link href="#">
+              <img
+                src="/static/img/button-three.png"
+                alt="Explore travel templates"
+                width={"90%"}
+              />
             </Link>
+          </ResponsiveColumn>
+          <ResponsiveColumn style={{ textAlign: "center", marginBottom: 16 }}>
+            <Link href="#">
+              <img
+                src="/static/img/button-four.png"
+                alt="Explore personal finance templates"
+                width={"90%"}
+              />
+            </Link>
+          </ResponsiveColumn>
+        </ResponsiveRow>
+
+        <Section style={{ paddingLeft: 25, paddingRight: 25 }}>
+          <Heading as="h3" style={{ margin: "26px 0 12px" }}>
+            Over 5,000 new templates to choose from
+          </Heading>
+          <Text style={{ marginBottom: 14 }}>
+            Search for a topic or browse through 250+ categories.
+          </Text>
+          <Img
+            src="/static/img/template-1.png"
+            alt="Screenshot of notion templates homepage"
+            width={"100%"}
+          />
+          <Heading as="h3" style={{ margin: "38px 0 12px" }}>
+            Use templates created by the world’s best operators
+          </Heading>
+          <Text style={{ marginBottom: 14 }}>
+            Apply frameworks from the best entrepreneurs, creators, and thought
+            leaders.
+          </Text>
+          <Img
+            src="/static/img/template-2.png"
+            alt="Screenshot of notion templates homepage"
+            width={"100%"}
+          />
+          <Heading as="h3" style={{ margin: "38px 0 12px" }}>
+            Redesigned Template Gallery experience
+          </Heading>
+          <Text style={{ marginBottom: 14 }}>
+            Discover trending templates and curated collections.
+          </Text>
+          <Img
+            src="/static/img/template-3.png"
+            alt="Screenshot of notion templates homepage"
+            width={"100%"}
+          />
+          <Button
+            style={{
+              background: "#4898C9",
+              color: "white",
+              borderRadius: 4.5,
+              margin: "48px 0 8px",
+              padding: "8px 13.5px",
+            }}
+          >
+            View templates &rarr;
+          </Button>
+          <Text>
+            Happy exploring, <br />
+            Ivan
+          </Text>
+          <Img
+            src={`/static/notion-logo.png`}
+            width="32"
+            height="32"
+            alt="Notion's Logo"
+            style={{ marginTop: 48 }}
+          />
+          <Text style={{ width: 160, marginBottom: 70 }}>
+            Notion - the connected workspace for your docs, projects, and
+            knowledge.
           </Text>
         </Section>
       </Container>
@@ -250,17 +150,14 @@ export const SingleLayoutTemplate = () => (
   </Html>
 );
 
-export default SingleLayoutTemplate;
+export default DoubleLayoutTemplate;
 
 const main = {
   fontFamily: '"Helvetica Neue",Helvetica,Arial,sans-serif',
-  background: "#ccc",
+  background: "#fff",
 };
 
 const container = {
-  backgroundColor: "#ffffff",
   margin: "0 auto",
-  paddingTop: 32,
+  paddingTop: 42,
 };
-
-const sectionPadding = { padding: "0px 36px" } as const;
