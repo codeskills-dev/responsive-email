@@ -5,7 +5,10 @@
     "url": "https://github.com/lordelogos"
   },
   "scripts": {
-    "dev": "cd samples && pnpm dev"
+    "dev": "cd samples && pnpm dev",
+    "build:jsx-email": "cd packages/jsx-email && pnpm build",
+    "build:react-email": "cd packages/react-email && pnpm build",
+    "build": "pnpm build:jsx-email && pnpm build:react-email"
   },
   "packageManager": "pnpm@8.15.5"
 }
