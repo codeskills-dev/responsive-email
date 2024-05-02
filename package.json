@@ -9,8 +9,8 @@
     "build:jsx-email": "cd packages/jsx-email && pnpm build",
     "build:react-email": "cd packages/react-email && pnpm build",
     "build": "pnpm build:jsx-email && pnpm build:react-email",
-    "release:jsx-email": "cd packages/jsx-email && npm publish --dry-run",
-    "release:react-email": "cd packages/react-email && npm publish --dry-run",
+    "release:jsx-email": "cd packages/jsx-email && npm publish",
+    "release:react-email": "cd packages/react-email && npm publish",
     "release": "pnpm release:jsx-email && pnpm release:react-email"
   },
   "packageManager": "pnpm@8.15.5"
