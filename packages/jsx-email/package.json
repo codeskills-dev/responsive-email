@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/codeskills-dev/responsive-react-email.git",
+    "url": "https://github.com/codeskills-dev/responsive-email.git",
     "directory": "packages/jsx-email"
   },
   "main": "./dist/index.js",
