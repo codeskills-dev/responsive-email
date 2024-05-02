@@ -61,7 +61,7 @@ When submitting a pull request, provide a clear description of the changes made 
 
 ## Bugs and Feature Requests
 
-For bugs and feature requests, [please create an issue](https://github.com/codeskills-dev/responsive-react-email/issues/new).
+For bugs and feature requests, [please create an issue](https://github.com/codeskills-dev/responsive-email/issues/new).
 
 ## Author
 
