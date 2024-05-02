@@ -1,61 +1,17 @@
 {
-  "name": "responsive-react-email",
-  "version": "0.0.5",
-  "description": "A utility for writing responsive email templates with react-email",
-  "keywords": [
-    "responsive-email",
-    "react-email",
-    "email-template",
-    "email",
-    "email-tables"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/codeskills-dev/responsive-react-email.git"
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./single-column": "./dist/single-column/index.js",
-    "./dual-column": "./dist/dual-column/index.js",
-    "./triple-column": "./dist/triple-column/index.js"
-  },
-  "typesVersions": {
-    "*": {
-      "single-column": [
-        "dist/single-column/index.d.ts"
-      ],
-      "dual-column": [
-        "dist/dual-column/index.d.ts"
-      ],
-      "triple-column": [
-        "dist/triple-column/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "dist"
-  ],
-  "scripts": {
-    "build": "tsup"
-  },
+  "name": "responsive-email-monorepo",
   "author": {
     "name": "Paul Ehikhuemen",
     "url": "https://github.com/lordelogos"
   },
-  "license": "MIT",
-  "devDependencies": {
-    "@react-email/section": "0.0.9",
-    "@types/react": "18.2.14",
-    "react": "18.2.0",
-    "react-email": "1.9.4",
-    "tsup": "^7.0.0",
-    "typescript": "5.1.3"
+  "scripts": {
+    "dev": "cd samples && pnpm dev",
+    "build:jsx-email": "cd packages/jsx-email && pnpm build",
+    "build:react-email": "cd packages/react-email && pnpm build",
+    "build": "pnpm build:jsx-email && pnpm build:react-email",
+    "release:jsx-email": "cd packages/jsx-email && npm publish --dry-run",
+    "release:react-email": "cd packages/react-email && npm publish --dry-run",
+    "release": "pnpm release:jsx-email && pnpm release:react-email"
   },
-  "peerDependencies": {
-    "react": "18.x",
-    "react-email": "1.x"
-  }
+  "packageManager": "pnpm@8.15.5"
 }

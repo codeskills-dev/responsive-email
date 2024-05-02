@@ -1,0 +1,70 @@
+{
+  "name": "@responsive-email/jsx-email",
+  "version": "0.0.1",
+  "description": "A utility for writing responsive email templates with jsx-email",
+  "keywords": [
+    "responsive-email",
+    "jsx-email",
+    "email-template",
+    "email",
+    "email-tables"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeskills-dev/responsive-react-email.git",
+    "directory": "packages/jsx-email"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./responsive-row": {
+      "import": "./dist/responsive-row.mjs",
+      "require": "./dist/responsive-row.js"
+    },
+    "./responsive-column": {
+      "import": "./dist/responsive-column.mjs",
+      "require": "./dist/responsive-column.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "responsive-row": [
+        "./dist/responsive-row.d.ts"
+      ],
+      "responsive-column": [
+        "./dist/responsive-column.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "author": {
+    "name": "Paul Ehikhuemen",
+    "url": "https://github.com/lordelogos"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "18.2.14",
+    "jsx-email": "1.10.12",
+    "react": "18.2.0",
+    "@responsive-email/core": "workspace:*",
+    "tsup": "^7.0.0",
+    "typescript": "5.1.3"
+  },
+  "peerDependencies": {
+    "react": "18.x"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
