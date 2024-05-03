@@ -1,6 +1,6 @@
 {
   "name": "@responsive-email/react-email",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A utility for writing responsive email templates with react-email",
   "keywords": [
     "responsive-email",
