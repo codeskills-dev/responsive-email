@@ -10,6 +10,8 @@ import {
   Text,
   Heading,
   Button,
+  Row,
+  Column,
 } from "@react-email/components";
 import * as React from "react";
 import { ResponsiveRow, ResponsiveColumn } from "@responsive-email/react-email";
@@ -52,36 +54,44 @@ export const MixedLayoutTemplate = () => (
             </Link>
           </ResponsiveColumn>
         </ResponsiveRow>
-        <Section
+        <Row
           style={{
             backgroundImage: `url("/static/img/banner-bg.jpg")`,
             backgroundSize: "cover",
             width: "100%",
-            padding: "48px 16px 64px",
             textAlign: "center",
             color: "white",
           }}
         >
-          <Heading as="h2" style={{ fontSize: 28 }}>
-            A Modern Design Agency
-          </Heading>
-          <Text style={{ marginBottom: 32, fontSize: 16 }}>
-            We help your brand go viral to connect you with your customers and
-            grow organically!
-          </Text>
-          <Button
+          <Column
             style={{
-              padding: "16px 20px",
-              background: "#171a1b",
-              color: "white",
-              textTransform: "uppercase",
-              fontWeight: "bold",
-              borderRadius: 5,
+              padding: "48px 16px 64px",
             }}
           >
-            Get started
-          </Button>
-        </Section>
+            <Heading as="h2" style={{ fontSize: 28, textAlign: "center" }}>
+              A Modern Design Agency
+            </Heading>
+            <Text
+              style={{ marginBottom: 32, fontSize: 16, textAlign: "center" }}
+            >
+              We help your brand go viral to connect you with your customers and
+              grow organically!
+            </Text>
+            <Button
+              style={{
+                padding: "16px 20px",
+                background: "#171a1b",
+                color: "white",
+                textTransform: "uppercase",
+                fontWeight: "bold",
+                borderRadius: 5,
+                margin: "0 auto",
+              }}
+            >
+              Get started
+            </Button>
+          </Column>
+        </Row>
         <ResponsiveRow paddingTop={15} paddingBottom={15}>
           <ResponsiveColumn>
             <Link href="#">
@@ -163,60 +173,69 @@ export const MixedLayoutTemplate = () => (
             </Button>
           </ResponsiveColumn>
         </ResponsiveRow>
-        <Section style={{ textAlign: "center", padding: "20px 20px 40px" }}>
-          <Heading as="h3">HTML Email Template Course</Heading>
-          <Text style={{ padding: "0 0 15px" }}>
-            Responsive HTML Email Templates that you can build around.
-            Responsive HTML Email Templates that you can build around.
-            Responsive HTML Email Templates that you can build around.
-            Responsive HTML Email Templates that you can build around.
-          </Text>
-          <Button
-            style={{
-              padding: "12px 20px",
-              background: "#171a1b",
-              color: "white",
-              borderRadius: 5,
-              fontWeight: "bold",
-            }}
-          >
-            View Course
-          </Button>
-        </Section>
-        <Section
+        <Row style={{ textAlign: "center" }}>
+          <Column style={{ padding: "20px 20px 40px" }}>
+            <Heading as="h3" style={{ textAlign: "center" }}>
+              HTML Email Template Course
+            </Heading>
+            <Text style={{ padding: "0 0 15px", textAlign: "center" }}>
+              Responsive HTML Email Templates that you can build around.
+              Responsive HTML Email Templates that you can build around.
+              Responsive HTML Email Templates that you can build around.
+              Responsive HTML Email Templates that you can build around.
+            </Text>
+            <Button
+              style={{
+                padding: "12px 20px",
+                background: "#171a1b",
+                color: "white",
+                borderRadius: 5,
+                fontWeight: "bold",
+                margin: "0 auto",
+              }}
+            >
+              View Course
+            </Button>
+          </Column>
+        </Row>
+        <Row
           style={{
             textAlign: "center",
             color: "white",
             background: "#171a1b",
-            padding: "20px 20px 40px",
           }}
         >
-          <img src="/static/img/modern-white.png" width={180} />
-          <Text>Modern HTML Email</Text>
-          <Text style={{ marginBottom: 10 }}>
-            123 Street Road City, State 55555
-          </Text>
-          <div style={{ padding: "20px 0" }}>
-            <Link href="#" style={{ fontSize: 0 }}>
-              <img src="/static/img/white-facebook.png" width={30} />
+          <Column style={{ padding: "20px 20px 40px" }}>
+            <img src="/static/img/modern-white.png" width={180} />
+            <Text>Modern HTML Email</Text>
+            <Text style={{ marginBottom: 10 }}>
+              123 Street Road City, State 55555
+            </Text>
+            <div style={{ padding: "20px 0" }}>
+              <Link href="#" style={{ fontSize: 0 }}>
+                <img src="/static/img/white-facebook.png" width={30} />
+              </Link>
+              <Link href="#" style={{ fontSize: 0 }}>
+                <img src="/static/img/white-twitter.png" width={30} />
+              </Link>
+              <Link href="#" style={{ fontSize: 0 }}>
+                <img src="/static/img/white-youtube.png" width={30} />
+              </Link>
+              <Link href="#" style={{ fontSize: 0 }}>
+                <img src="/static/img/white-linkedin.png" width={30} />
+              </Link>
+              <Link href="#" style={{ fontSize: 0 }}>
+                <img src="/static/img/white-instagram.png" width={30} />
+              </Link>
+            </div>
+            <Link
+              href="#"
+              style={{ textTransform: "uppercase", color: "white" }}
+            >
+              Subscribe
             </Link>
-            <Link href="#" style={{ fontSize: 0 }}>
-              <img src="/static/img/white-twitter.png" width={30} />
-            </Link>
-            <Link href="#" style={{ fontSize: 0 }}>
-              <img src="/static/img/white-youtube.png" width={30} />
-            </Link>
-            <Link href="#" style={{ fontSize: 0 }}>
-              <img src="/static/img/white-linkedin.png" width={30} />
-            </Link>
-            <Link href="#" style={{ fontSize: 0 }}>
-              <img src="/static/img/white-instagram.png" width={30} />
-            </Link>
-          </div>
-          <Link href="#" style={{ textTransform: "uppercase", color: "white" }}>
-            Subscribe
-          </Link>
-        </Section>
+          </Column>
+        </Row>
       </Container>
     </Body>
   </Html>
@@ -232,4 +251,5 @@ const main = {
 const container = {
   backgroundColor: "#ffffff",
   margin: "0 auto",
+  maxWidth: "600px",
 };

@@ -58,40 +58,55 @@ export function createResponsiveRow<SectionProps extends BaseSectionProps>(
       (props.maxWidth ?? 600 - pl - pr) / totalColumnSpan;
 
     return (
-      <Section
+      <table
+        align="center"
+        width="100%"
         style={{
           textAlign: "center",
           fontSize: 0,
-          padding: `${props.paddingTop ?? 0}px ${props.paddingRight ?? 0}px ${
-            props.paddingBottom ?? 0
-          }px ${props.paddingLeft ?? 0}px`,
           ...props.style,
         }}
+        border={0}
+        cellPadding="0"
+        cellSpacing="0"
+        role="presentation"
       >
-        {childrenArray.map((node, i) => {
-          if (isResponsiveColumn(node)) {
-            const columnProps = node.props;
-            const columnSpan = columnProps.span ?? 1;
+        <tbody>
+          <tr>
+            <td
+              style={{
+                padding: `${props.paddingTop ?? 0}px ${
+                  props.paddingRight ?? 0
+                }px ${props.paddingBottom ?? 0}px ${props.paddingLeft ?? 0}px`,
+              }}
+            >
+              {childrenArray.map((node, i) => {
+                if (isResponsiveColumn(node)) {
+                  const columnProps = node.props;
+                  const columnSpan = columnProps.span ?? 1;
 
-            return (
-              <Section
-                {...columnProps}
-                key={i}
-                style={{
-                  maxWidth: oneColumnMaxWidth * columnSpan,
-                  display: "inline-block",
-                  verticalAlign: "top",
-                  fontSize: 16,
-                  boxSizing: "border-box",
-                  ...columnProps.style,
-                }}
-              />
-            );
-          }
+                  return (
+                    <Section
+                      {...columnProps}
+                      key={i}
+                      style={{
+                        maxWidth: oneColumnMaxWidth * columnSpan,
+                        display: "inline-block",
+                        verticalAlign: "top",
+                        fontSize: 16,
+                        boxSizing: "border-box",
+                        ...columnProps.style,
+                      }}
+                    />
+                  );
+                }
 
-          return node;
-        })}
-      </Section>
+                return node;
+              })}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     );
   };
 }
