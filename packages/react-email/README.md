@@ -1,4 +1,4 @@
-# Responsive Email
+# @responsive-email/react-email
 
 `responsive-email` is a framework-agnostic set of utility components that allow to build
 responsive email templates with the best support possible. It does not make use of
