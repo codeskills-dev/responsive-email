@@ -22,39 +22,45 @@ export const SingleLayoutTemplate = () => (
 
     <Body style={main}>
       <Container style={container}>
-        <Section style={colPadding}>
-          <Heading
-            as="h1"
-            style={{ fontSize: 24, color: "#17BEBB", fontWeight: "bolder" }}
-          >
-            Shop
-          </Heading>
-        </Section>
-        <Section style={colPadding}>
-          <Heading
-            as="h2"
-            style={{
-              fontSize: 34,
-              fontWeight: 400,
-              marginBottom: 14,
-              letterSpacing: 1,
-            }}
-          >
-            Ronald your shopping cart misses you
-          </Heading>
-        </Section>
-        <Section style={colPadding}>
-          <Text
-            style={{
-              fontSize: 24,
-              marginBottom: 24,
-              lineHeight: 1.8,
-              fontWeight: 300,
-            }}
-          >
-            Amazing deals, updates, interesting news right in your inbox
-          </Text>
-        </Section>
+        <Row>
+          <Column style={colPadding}>
+            <Heading
+              as="h1"
+              style={{ fontSize: 24, color: "#17BEBB", fontWeight: "bolder" }}
+            >
+              Shop
+            </Heading>
+          </Column>
+        </Row>
+        <Row>
+          <Column style={colPadding}>
+            <Heading
+              as="h2"
+              style={{
+                fontSize: 34,
+                fontWeight: 400,
+                marginBottom: 14,
+                letterSpacing: 1,
+              }}
+            >
+              Ronald your shopping cart misses you
+            </Heading>
+          </Column>
+        </Row>
+        <Row>
+          <Column style={colPadding}>
+            <Text
+              style={{
+                fontSize: 24,
+                marginBottom: 24,
+                lineHeight: 1.8,
+                fontWeight: 300,
+              }}
+            >
+              Amazing deals, updates, interesting news right in your inbox
+            </Text>
+          </Column>
+        </Row>
         <Section>
           <Row
             style={{
@@ -138,19 +144,21 @@ export const SingleLayoutTemplate = () => (
             <Column style={{ fontSize: 16, textAlign: "center" }}>$120</Column>
           </Row>
         </Section>
-        <Section style={{ ...colPadding, paddingTop: 15, paddingBottom: 15 }}>
-          <Button
-            style={{
-              background: "#17BEBB",
-              color: "white",
-              borderRadius: 5,
-              margin: "10px 0",
-              padding: "10px 16px",
-            }}
-          >
-            Continue your order
-          </Button>
-        </Section>
+        <Row>
+          <Column style={{ ...colPadding, paddingTop: 15, paddingBottom: 15 }}>
+            <Button
+              style={{
+                background: "#17BEBB",
+                color: "white",
+                borderRadius: 5,
+                margin: "10px 0",
+                padding: "10px 16px",
+              }}
+            >
+              Continue your order
+            </Button>
+          </Column>
+        </Row>
         <ResponsiveRow
           paddingTop={24}
           paddingBottom={24}
@@ -225,14 +233,16 @@ export const SingleLayoutTemplate = () => (
             </Section>
           </ResponsiveColumn>
         </ResponsiveRow>
-        <Section style={{ ...colPadding, textAlign: "center" }}>
-          <Text style={{ color: "rgba(0,0,0, 0.4)", margin: "15px 0" }}>
-            No longer want to receive these emails? You can{" "}
-            <Link href="#" style={{ color: "rgba(0,0,0,0.8)" }}>
-              Unsubscribe here
-            </Link>
-          </Text>
-        </Section>
+        <Row style={{ textAlign: "center" }}>
+          <Column style={colPadding}>
+            <Text style={{ color: "rgba(0,0,0, 0.4)", margin: "15px 0" }}>
+              No longer want to receive these emails? You can{" "}
+              <Link href="#" style={{ color: "rgba(0,0,0,0.8)" }}>
+                Unsubscribe here
+              </Link>
+            </Text>
+          </Column>
+        </Row>
       </Container>
     </Body>
   </Html>
@@ -246,6 +256,7 @@ const main = {
 };
 
 const container = {
+  maxWidth: "600px",
   backgroundColor: "#ffffff",
   margin: "0 auto",
   paddingTop: 32,

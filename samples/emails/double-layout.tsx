@@ -160,4 +160,5 @@ const main = {
 const container = {
   margin: "0 auto",
   paddingTop: 42,
+  maxWidth: "600px",
 };
