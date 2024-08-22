@@ -54,7 +54,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@react-email/section": "0.0.14",
+    "@react-email/section": "0.0.14"
   },
   "devDependencies": {
     "@responsive-email/core": "workspace:*",
