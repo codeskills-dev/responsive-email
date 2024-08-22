@@ -1,11 +1,7 @@
 import React from "react";
 import { ResponsiveColumnProps } from "./create-responsive-column";
-import { BaseSectionProps } from "./base-section-props";
 
-export type ResponsiveRowProps<SectionProps extends BaseSectionProps> = Omit<
-  SectionProps,
-  "style"
-> & {
+export type ResponsiveRowProps = Omit<React.ComponentPropsWithoutRef<'table'>, 'style'> & {
   style?: Omit<
     React.CSSProperties,
     | "padding"
@@ -26,16 +22,15 @@ export type ResponsiveRowProps<SectionProps extends BaseSectionProps> = Omit<
   paddingBottom?: number;
 };
 
-export function createResponsiveRow<SectionProps extends BaseSectionProps>(
-  Section: React.FC<BaseSectionProps>,
+export function createResponsiveRow(
   isResponsiveColumn: (
-    node: any
+    node: any,
   ) => node is React.ReactElement<
-    ResponsiveColumnProps<SectionProps>,
-    React.FC<ResponsiveColumnProps<SectionProps>>
-  >
+    ResponsiveColumnProps,
+    React.FC<ResponsiveColumnProps>
+  >,
 ) {
-  return (props: ResponsiveRowProps<SectionProps>) => {
+  return (props: ResponsiveRowProps) => {
     const childrenArray = React.Children.toArray(props.children);
 
     const responsiveColumns = childrenArray
@@ -43,13 +38,13 @@ export function createResponsiveRow<SectionProps extends BaseSectionProps>(
       .map((node) => node.props.span ?? 1);
     if (responsiveColumns.length > 3) {
       console.warn(
-        "You've exceeded the recommended 3-column limit in your email template. Consider sticking to a maximum of 3 columns for best practice."
+        "You've exceeded the recommended 3-column limit in your email template. Consider sticking to a maximum of 3 columns for best practice.",
       );
     }
 
     const totalColumnSpan = responsiveColumns.reduce(
       (acc, spanForColumn) => acc + spanForColumn,
-      0
+      0,
     );
 
     const pl = props.paddingLeft ?? 0;
@@ -61,15 +56,16 @@ export function createResponsiveRow<SectionProps extends BaseSectionProps>(
       <table
         align="center"
         width="100%"
+        border={0}
+        cellPadding="0"
+        cellSpacing="0"
+        role="presentation"
+        {...props}
         style={{
           textAlign: "center",
           fontSize: 0,
           ...props.style,
         }}
-        border={0}
-        cellPadding="0"
-        cellSpacing="0"
-        role="presentation"
       >
         <tbody>
           <tr>
@@ -86,9 +82,15 @@ export function createResponsiveRow<SectionProps extends BaseSectionProps>(
                   const columnSpan = columnProps.span ?? 1;
 
                   return (
-                    <Section
-                      {...columnProps}
+                    <table
                       key={i}
+                      align="center"
+                      width="100%"
+                      border={0}
+                      cellPadding="0"
+                      cellSpacing="0"
+                      role="presentation"
+                      {...columnProps}
                       style={{
                         maxWidth: oneColumnMaxWidth * columnSpan,
                         display: "inline-block",
@@ -97,7 +99,13 @@ export function createResponsiveRow<SectionProps extends BaseSectionProps>(
                         boxSizing: "border-box",
                         ...columnProps.style,
                       }}
-                    />
+                    >
+                      <tbody>
+                        <tr>
+                          <td {...columnProps.tdProps}>{columnProps.children}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   );
                 }
 

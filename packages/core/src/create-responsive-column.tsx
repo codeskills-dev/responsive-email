@@ -1,12 +1,12 @@
 import React from "react";
 import { BaseSectionProps } from "./base-section-props";
 
-export type ResponsiveColumnProps<SectionProps extends BaseSectionProps> = SectionProps & {
+export type ResponsiveColumnProps = React.ComponentPropsWithoutRef<'table'> & {
   span?: number;
+  tdProps?: React.ComponentPropsWithoutRef<'td'>;
 };
 
-export function createResponsiveColumn<TSection extends BaseSectionProps>() {
-
+export function createResponsiveColumn() {
   const ResponsiveColumn = (_props: BaseSectionProps) => {
     /*
       This component is basically just a placeholder that we then get the props from.
@@ -31,14 +31,14 @@ export function createResponsiveColumn<TSection extends BaseSectionProps>() {
     isResponsiveColumn: (
       node: any,
     ): node is React.ReactElement<
-      ResponsiveColumnProps<TSection>,
+      ResponsiveColumnProps,
       typeof ResponsiveColumn
     > => {
       return (
-        React.isValidElement<ResponsiveColumnProps<TSection>>(node) &&
+        React.isValidElement<ResponsiveColumnProps>(node) &&
         node.type === ResponsiveColumn
       );
     },
-    component: ResponsiveColumn as React.FC<ResponsiveColumnProps<TSection>>,
+    component: ResponsiveColumn as React.FC<ResponsiveColumnProps>,
   };
 }

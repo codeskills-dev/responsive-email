@@ -1,11 +1,10 @@
-import { Section, SectionProps } from "@react-email/section";
 import { isResponsiveColumn } from "./responsive-column";
 import {
   ResponsiveRowProps as BaseProps,
   createResponsiveRow,
 } from "@responsive-email/core";
 
-export type ResponsiveRowProps = BaseProps<SectionProps>;
+export type ResponsiveRowProps = BaseProps;
 
 /**
  * @example
@@ -16,7 +15,6 @@ export type ResponsiveRowProps = BaseProps<SectionProps>;
  * </ResponsiveRow>
  * ```
  */
-export const ResponsiveRow = createResponsiveRow<SectionProps>(
-  Section,
+export const ResponsiveRow = createResponsiveRow(
   isResponsiveColumn
 );
