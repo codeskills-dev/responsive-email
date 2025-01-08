@@ -9,12 +9,13 @@
   },
   "dependencies": {
     "@responsive-email/react-email": "workspace:*",
-    "@react-email/components": "0.0.16",
-    "react-email": "2.1.1",
-    "react": "18.2.0"
+    "@react-email/components": "0.0.32",
+    "react-email": "3.0.5",
+    "react": "^19",
+    "react-dom": "^19"
   },
   "devDependencies": {
-    "@types/react": "18.2.33",
-    "@types/react-dom": "18.2.14"
+    "@types/react": "^19",
+    "@types/react-dom": "^19"
   }
 }
