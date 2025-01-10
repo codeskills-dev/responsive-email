@@ -20,15 +20,18 @@
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
     },
     "./responsive-row": {
       "import": "./dist/responsive-row.mjs",
-      "require": "./dist/responsive-row.js"
+      "require": "./dist/responsive-row.js",
+      "types": "./dist/responsive-row.d.ts"
     },
     "./responsive-column": {
       "import": "./dist/responsive-column.mjs",
-      "require": "./dist/responsive-column.js"
+      "require": "./dist/responsive-column.js",
+      "types": "./dist/responsive-column.d.ts"
     }
   },
   "typesVersions": {
